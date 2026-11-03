@@ -1,0 +1,26 @@
+﻿WINCHESTER & ZOMBIES  -  licence
+================================
+
+Copyright (c) 2026 AmericanKiwi. All rights reserved.
+
+You may download this mod from the official page and use it for free with
+Nomad Drive, including in multiplayer and in videos and streams.
+
+You may NOT, without written permission from the author:
+  - re-upload or redistribute this mod, or any file in it, anywhere else
+    (link to the official page instead);
+  - publish modified versions, or include its files in other mods or packs;
+  - sell it or put it behind a paywall.
+
+Official download: {{OFFICIAL_URL}}
+A copy from anywhere else is unofficial and may have been tampered with.
+
+THE MOD IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. Back up your saves.
+
+
+Third-party parts (these keep their own licences, not the terms above):
+  - BepInEx 5 (winhttp.dll, doorstop_config.ini, BepInEx\core): LGPL-2.1,
+    https://github.com/BepInEx/BepInEx
+  - Mono class libraries (BepInEx\unstripped_corlib): MIT licence,
+    https://github.com/mono/mono
+Nomad Drive is the property of its developers. No game files are included.

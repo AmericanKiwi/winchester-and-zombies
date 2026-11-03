@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>WinchesterZombies</AssemblyName>
+    <RootNamespace>WinchesterZombies</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Version>1.5.0</Version>
+    <Authors>AmericanKiwi</Authors>
+    <Company>AmericanKiwi</Company>
+    <Product>Winchester &amp; Zombies (Nomad Drive mod)</Product>
+    <Copyright>Copyright (c) 2026 AmericanKiwi. All rights reserved. Redistribution not permitted; see LICENSE.txt.</Copyright>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <!-- Compile against the game's own runtime libraries (managed-stripped), so anything that compiles exists at runtime. -->
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NoStdLib>true</NoStdLib>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <!-- Override on the command line: dotnet build -p:GameDir="D:\Steam\steamapps\common\Nomad Drive" -p:BepInExCore="...\BepInEx\core" -->
+    <GameDir Condition="'$(GameDir)' == ''">A:\SteamLibrary\steamapps\common\Nomad Drive</GameDir>
+    <Managed>$(GameDir)\Nomad Drive_Data\Managed</Managed>
+    <BepInExCore Condition="'$(BepInExCore)' == ''">..\..\bepinex\BepInEx\core</BepInExCore>
+  </PropertyGroup>
+
+  <!-- Game and engine assemblies: compile-time references only, never shipped. -->
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(BepInExCore)\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(BepInExCore)\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(Managed)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="PaintIn3D"><HintPath>$(Managed)\PaintIn3D.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="PaintCore"><HintPath>$(Managed)\PaintCore.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="CW.Common"><HintPath>$(Managed)\CW.Common.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="ALINE"><HintPath>$(Managed)\ALINE.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="EvilCore.UI"><HintPath>$(Managed)\EvilCore.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="EvilCore.EvilSave"><HintPath>$(Managed)\EvilCore.EvilSave.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UniTask"><HintPath>$(Managed)\UniTask.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="EvilCore.Networking"><HintPath>$(Managed)\EvilCore.Networking.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="RootMotion"><HintPath>$(Managed)\RootMotion.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="NWH.WheelController"><HintPath>$(Managed)\NWH.WheelController.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="NWH.Common"><HintPath>$(Managed)\NWH.Common.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Mirror"><HintPath>$(Managed)\Mirror.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Rewired_Core"><HintPath>$(Managed)\Rewired_Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.Addressables"><HintPath>$(Managed)\Unity.Addressables.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.ResourceManager"><HintPath>$(Managed)\Unity.ResourceManager.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime"><HintPath>$(Managed)\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime"><HintPath>$(Managed)\Unity.RenderPipelines.Core.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Sirenix.Serialization"><HintPath>$(Managed)\Sirenix.Serialization.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="mscorlib"><HintPath>$(Managed)\mscorlib.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System"><HintPath>$(Managed)\System.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Core"><HintPath>$(Managed)\System.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="netstandard"><HintPath>$(Managed)\netstandard.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(Managed)\UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(Managed)\UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(Managed)\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(Managed)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(Managed)\UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AnimationModule"><HintPath>$(Managed)\UnityEngine.AnimationModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AssetBundleModule"><HintPath>$(Managed)\UnityEngine.AssetBundleModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>$(Managed)\UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule"><HintPath>$(Managed)\UnityEngine.ParticleSystemModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule"><HintPath>$(Managed)\UnityEngine.JSONSerializeModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(Managed)\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TerrainModule"><HintPath>$(Managed)\UnityEngine.TerrainModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule"><HintPath>$(Managed)\UnityEngine.TerrainPhysicsModule.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+</Project>
